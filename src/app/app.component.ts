@@ -23,6 +23,9 @@ export class AppComponent implements OnInit{
 
   selectedDrink = '';
   description = '';
+  totatDrinks = '';
+  totalMoney = '';
+  initReport = false;
 
   ngOnInit() {
     // Tests sur la console.
@@ -60,6 +63,9 @@ export class AppComponent implements OnInit{
     console.log("13 => ",orange.getOrder());
     orange = new SugarDecorator(orange,2);
     console.log("14 => ",orange.getOrder());
+
+    console.log(orange.getTotalOfDrinks());
+    console.log("total => ",orange.getTotalMoney());
   }
 
 
@@ -97,6 +103,7 @@ export class AppComponent implements OnInit{
     }
 
     this.description = this.drink.getOrder();
+    this.initReport = true;
   }
 
   addSugar() {
@@ -109,6 +116,14 @@ export class AppComponent implements OnInit{
 
   disableDoingDrink() {
     return this.selectedDrink === '' || this.ammount.value === null;
+  }
+
+  showReport() {
+    this.totalMoney = this.drink.getTotalMoney();
+    this.totatDrinks = this.drink.getTotalOfDrinks();
+
+    console.log(this.drink.getTotalOfDrinks());
+    console.log("total => ",this.drink.getTotalMoney());
   }
 
 }

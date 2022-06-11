@@ -1,4 +1,5 @@
 import { Drink } from "./drink";
+import { Reporting } from "./reporting";
 
 export class Chocolate extends Drink {
     public description = "H::";
@@ -7,5 +8,8 @@ export class Chocolate extends Drink {
     constructor(ammountGiven: number){
         super();
         this.ammountGiven = ammountGiven;
+        if (this.ammountGiven >= this.cost) {
+            Reporting.totalChocolates += 1;
+        }
     }
 }

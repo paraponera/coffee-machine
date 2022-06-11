@@ -412,11 +412,22 @@
       <span class="material-icons">get_app</span>
       <span>Get drink</span>
     </button>
+
+    <button class="card card-small" [disabled]='!initReport' (click)='showReport()'>
+      <span class="material-icons">analytics</span>
+      <span>Report</span>
+    </button>
   </div>
 
   <!-- Terminal -->
   <div class="terminal">
       <pre>{{ description }}</pre>
+  </div>
+
+    <!-- Terminal2 Reporting -->
+    <div class="terminal">
+      <pre>{{ totatDrinks }}</pre>
+      <pre>{{ totalMoney }}</pre>
   </div>
 
 
