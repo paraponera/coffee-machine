@@ -45,7 +45,7 @@ export class AppComponent implements OnInit{
     console.log("6 => ",coffee.getOrder());
     
 
-    let chocolate = new Chocolate(0.1);
+    let chocolate = new Chocolate(1);
     console.log("7 => ",chocolate.getOrder());
     chocolate = new ExtraHotDecorator(chocolate);
     console.log("8 => ",chocolate.getOrder());
